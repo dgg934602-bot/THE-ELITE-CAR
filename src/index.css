@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-black text-white antialiased selection:bg-white selection:text-black;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes lamboZoom {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+  25% { transform: scale(1.08) rotate(-1deg); opacity: 1; }
+  50% { transform: scale(1.15) rotate(1deg); opacity: 0.9; }
+  75% { transform: scale(1.08) rotate(-1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+}
+
+@keyframes slideText {
+  0% { transform: translateY(80px); opacity: 0; }
+  100% { transform: translateY(0px); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+  50% { box-shadow: 0 0 40px rgba(255,255,255,0.7); }
+  100% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+}
+
+@keyframes floatCar {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+@keyframes partFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -20px); }
+}
+
+@keyframes clipAnim {
+  0% { opacity: 0; transform: scale(1); }
+  8% { opacity: 1; transform: scale(1.08); }
+  24% { opacity: 1; transform: scale(1.12); }
+  32% { opacity: 0; transform: scale(1.15); }
+  100% { opacity: 0; }
+}
+
+.lambo-frame {
+  animation: lamboZoom 10s infinite ease-in-out;
+}
+
+.hero-text {
+  animation: slideText 2s ease forwards;
+}
+
+.glow-btn {
+  animation: glowPulse 3s infinite;
+}
+
+.animate-shine {
+  animation: shine 6s linear infinite;
+}
+
+.animate-floatCar {
+  animation: floatCar 8s ease-in-out infinite;
+}
+
+.animate-partFloat {
+  animation: partFloat 6s ease-in-out infinite;
+}
+
+.animate-clipAnim {
+  animation: clipAnim 15s infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+@keyframes panelLiftLeft {
+  0% { transform: translate(0px,0px) rotate(0deg); }
+  50% { transform: translate(-140px,-140px) rotate(-18deg); }
+  100% { transform: translate(0px,0px) rotate(0deg); }
+}
+
+@keyframes panelLiftRight {
+  0% { transform: translate(0px,0px) rotate(0deg); }
+  50% { transform: translate(140px,-140px) rotate(18deg); }
+  100% { transform: translate(0px,0px) rotate(0deg); }
+}
+
+@keyframes wheelLeft {
+  0% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(-180px) rotate(-180deg); }
+  100% { transform: translateX(0px) rotate(0deg); }
+}
+
+@keyframes wheelRight {
+  0% { transform: translateX(0px) rotate(0deg); }
+  50% { transform: translateX(180px) rotate(180deg); }
+  100% { transform: translateX(0px) rotate(0deg); }
+}
+
+@keyframes clamshellLift {
+  0% { transform: translateX(-50%) rotateX(0deg); }
+  50% { transform: translateX(-50%) translateY(-120px) rotateX(70deg); }
+  100% { transform: translateX(-50%) rotateX(0deg); }
+}
+
+@keyframes engineGlow {
+  0% { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+  50% { box-shadow: 0 0 80px rgba(255,255,255,0.35); }
+  100% { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+}
+
+.animate-panelLiftLeft { animation: panelLiftLeft 8s ease-in-out infinite; }
+.animate-panelLiftRight { animation: panelLiftRight 8s ease-in-out infinite; }
+.animate-wheelLeft { animation: wheelLeft 8s ease-in-out infinite; }
+.animate-wheelRight { animation: wheelRight 8s ease-in-out infinite; }
+.animate-clamshellLift { animation: clamshellLift 8s ease-in-out infinite; }
+.animate-engineGlow { animation: engineGlow 4s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.smooth {
+  transition: transform 0.15s linear, opacity 0.15s linear;
+  will-change: transform;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
